@@ -1,4 +1,3 @@
 # demo
 
-
-# mo for test somr framework
+# this project for testing some framework
