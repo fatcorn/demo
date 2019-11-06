@@ -1,3 +1,3 @@
 # demo
 
-# this project for testing some framework
+# demo for test some technology
