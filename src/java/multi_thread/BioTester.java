@@ -117,6 +117,7 @@ class ConnectIOnHandler extends Thread{
                     while (client_msg != null) {
                         System.out.println("在这里阻塞");
                         System.out.println(new Date() +":客户端消息:" + client_msg);
+                        // 再此处阻塞, 如果 不设置 超时时间,会一直卡在这里，导致线程池资源耗尽，设置超时时间则会关掉连接
                         client_msg = bufr.readLine();
                     }
                     // 处理数据
