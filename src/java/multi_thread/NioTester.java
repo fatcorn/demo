@@ -49,7 +49,7 @@ class NioServer implements Runnable{
             Selector selector = Selector.open();
             serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
-            // 3.开启轮询
+            // 3.开启轮询,在select 方法阻塞
             while (selector.select() > 0) {
                 // 从selector所有事件就绪的key，并遍历处理。
                 Set<SelectionKey> selectionKeys = selector.selectedKeys();
@@ -75,7 +75,7 @@ class NioServer implements Runnable{
                             Charset charset = Charset.forName(StandardCharsets.UTF_8.name());
 
                             readBuf.flip();
-                            System.out.println(String.valueOf(charset.decode(readBuf).array()));
+                            System.out.println("nio server:" + String.valueOf(charset.decode(readBuf).array()));
                         }
                     } catch (IOException e) {
                         e.printStackTrace();

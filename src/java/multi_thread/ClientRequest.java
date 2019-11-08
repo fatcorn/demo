@@ -41,7 +41,7 @@ class Client implements Runnable {
                 Thread.sleep(500);
 
                 System.out.println("连接已建立" + socket.getLocalPort());
-                executorService.submit(new ClientHandler(socket));
+                //executorService.submit(new ClientHandler(socket));
             }
             catch (Exception E) {
                 E.printStackTrace();
