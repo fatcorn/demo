@@ -38,7 +38,7 @@ class Client implements Runnable {
 
                 PrintWriter printWriter=new PrintWriter(os, true);//将输出流包装成打印流
                 printWriter.println("hello,I'm " + new Random().nextInt());
-                Thread.sleep(500);
+                Thread.sleep(5);
 
                 System.out.println("连接已建立" + socket.getLocalPort());
                 //executorService.submit(new ClientHandler(socket));
