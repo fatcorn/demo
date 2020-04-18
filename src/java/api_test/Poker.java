@@ -33,6 +33,7 @@ public class Poker {
     private void createCard(List<Card> cards){
         if(cards == null) {
             System.out.println("错误的参数");
+            return;
         }
         for (String name : names) {
             for (TypeEnum typeEnum : TypeEnum.values()) {

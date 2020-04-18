@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.den.sdsdemo.mapper.Table4Mapper">
+    <select id="findByPage" resultType="com.den.sdsdemo.Vo.Table4Vo">
+        select t4.id table4Id,t2.id table2Id,t3.id table3Id from table_4 t4
+        join table2 t2 on t4.table2_id = t2.id
+        join table3 t3 on t4.table3_id = t3.id
+        <where>
+            <if test="t4Id!=null">
+                t4.id = #{t4Id}
+            </if>
+        </where>
+    </select>
+</mapper>

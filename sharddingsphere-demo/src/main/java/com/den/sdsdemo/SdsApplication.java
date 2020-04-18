@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author fatKarin
  */
 @SpringBootApplication//(exclude = DataSourceAutoConfiguration.class)
-@EnableAutoConfiguration
 @MapperScan("com.den.sdsdemo.mapper")
 public class SdsApplication {
 

@@ -19,7 +19,17 @@ GET http://localhost:9999/uc/my/table1BatchAdd
 Content-Type: application/x-www-form-urlencoded
 
 ###
+GET http://localhost:9999/uc/my/table4BatchAdd
+Content-Type: application/x-www-form-urlencoded
+
+###
 POST http://localhost:9999/uc/my/getTableVoList
+Content-Type: application/x-www-form-urlencoded
+
+currentPage=1&&pageSize=10
+
+###
+POST http://localhost:9999/uc/my/getTable4VoVoList
 Content-Type: application/x-www-form-urlencoded
 
 currentPage=1&&pageSize=10

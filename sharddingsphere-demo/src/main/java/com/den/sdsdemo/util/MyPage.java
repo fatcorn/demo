@@ -10,7 +10,7 @@ import java.util.List;
  * @author fatKarin
  * @date 2020/2/28 16:28
  */
-public class MyPage<T> implements IPage<T> {
+public class MyPage<T> implements IMyPage<T> {
 
     private static final long serialVersionUID = 8545996863226528798L;
     private List<T> records;
@@ -81,7 +81,7 @@ public class MyPage<T> implements IPage<T> {
     }
 
     @Override
-    public IPage<T> setTotal(long total) {
+    public IMyPage<T> setTotal(long total) {
         this.total = (int) total;
         return this;
     }
@@ -96,29 +96,21 @@ public class MyPage<T> implements IPage<T> {
     }
 
     @Override
-    public IPage<T> setSize(long size) {
+    public IMyPage<T> setSize(Integer size) {
         this.size = (int) total;
         return this;
     }
 
-    public MyPage<T> setSize(Integer size) {
-        this.size = size;
-        return this;
-    }
 
     public long getCurrent() {
         return this.current;
     }
 
     @Override
-    public IPage<T> setCurrent(long current) {
+    public IMyPage<T> setCurrent(Integer current) {
         return null;
     }
 
-    public MyPage<T> setCurrent(Integer current) {
-        this.current = current;
-        return this;
-    }
 
     public String[] ascs() {
         return this.ascs;
@@ -159,7 +151,7 @@ public class MyPage<T> implements IPage<T> {
     }
 
     public boolean isSearchCount() {
-        return this.total < 0L ? false : this.isSearchCount;
+        return this.total >= 0L && this.isSearchCount;
     }
 
     public MyPage<T> setSearchCount(boolean isSearchCount) {

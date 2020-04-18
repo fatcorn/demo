@@ -1,9 +1,6 @@
 package api_test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @author fatKarin
@@ -19,11 +16,11 @@ public class TreeTest {
             integerTree.addElement(new Random().nextInt(500));
         }
         integerTree.dfs();
-
+        integerTree.bfs();
     }
 }
 
-// 二叉树,
+// 二叉查找树
 class Tree<T extends Comparable<T>> {
 
     private PriorityQueue<T> queue;
@@ -103,6 +100,10 @@ class Tree<T extends Comparable<T>> {
     void dfs() {
         System.out.println("插入顺序：");
         this.nodes.forEach(x -> System.out.println(x.element));
+        System.out.println("排序顺序：");
+        while (!this.queue.isEmpty()) {
+            System.out.println(this.queue.remove());
+        }
         if(this.root == null)
             return;
         System.out.println("元素个数：" + this.elementNum);
@@ -118,13 +119,20 @@ class Tree<T extends Comparable<T>> {
             dfs(node.right);
     }
 
-    //广度优先遍历,待完成
+    //广度优先遍历
     void bfs() {
-        if(this.root == null)
-            return;
-        dfs(this.root);
+        ArrayDeque<Node> deque = new ArrayDeque<>();
+        deque.add(root);
+        System.out.println("bfs顺序：");
+        while (!deque.isEmpty()) {
+            Node node = deque.remove();
+            System.out.println(node.element);
+            if(node.left != null)
+                deque.add(node.left);
+            if(node.right != null)
+                deque.add(node.right);
+        }
+
     }
 
-    private void bfs(Node<T> node) {
-    }
 }

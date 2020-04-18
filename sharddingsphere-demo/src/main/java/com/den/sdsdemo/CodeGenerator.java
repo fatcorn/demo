@@ -32,7 +32,7 @@ public class CodeGenerator {
 
     public static void main(String[]  args) {
         // 实体类名称
-        String entityName = "Table3";
+        String entityName = "Table4";
         // 模块名称，代码文件生成地
         String moduleName = "/sharddingsphere-demo";
 
